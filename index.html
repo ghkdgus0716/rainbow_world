@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cat</title>
+	<style type = "text/css">
+
+
+		body{perspective: 800px; }
+
+		#myRect{
+			width: 100px; height: 100px; margin: auto; position: absolute; top: 200px; left: 1350px; animation:move 1s linear infinite forwards;}
+
+ 
+
+		@keyframes move{
+
+			from{background-color: blue;}
+
+			to{transform: rotate3d(1,0.5,-1,360deg); background-color: red;
+
+				}
+
+ 
+
+		}
+
+		#text1{color:white; text-align:center; position: absolute; left:1200px; top:250px; font-size: 50px;}
+
+		#cat1 {
+		   height: 600px;  margin-top: 80px; position: absolute; left:80px;
+		}
+		#blackbox{background-color: yellow; height:200px; width:200px; position: absolute; right: 200px;}
+		#cirBut1 {
+		border-radius: 50%;
+		width: 215px;
+		height:215px;
+		position: absolute; 
+		margin-top: 290px;
+		left:148px;
+		background:red;
+		opacity : 0.5;
+		animation: colo 0.5s linear infinite alternate;
+		cursor:pointer;
+		}
+		#cirBut2 {
+		border-radius: 50%;
+		width: 215px;
+		height:215px;
+		position: absolute; 
+		margin-top: 298px;
+		left:468px;
+		background:yellow;
+		opacity : 0.5;
+		animation: colos 0.5s linear infinite alternate;
+		cursor:pointer;
+		}
+
+		/*#rainbow1 {width:400px; animation:leftright 1.5s cubic-bezier(0,.53,.21,.99) forwards;}
+		#rainbow2 {width:600px; animation:downright 0.5s cubic-bezier(0,.53,.21,.99) forwards;}*/
+		
+		#gifbox{margin: auto; position: absolute; top: 80px; left: 750px; }
+		#gifbox2{margin: auto; position: absolute; top: 400px; left: 900px;  }
+		#rsource{ animation: turndown 2s cubic-bezier(0,.73,.41,.99) infinite; animation-play-state: paused; }
+
+		@keyframes turndown{
+			from{}
+			to{transform: ratote3D(0,1,0,360deg);
+			}
+		}
+
+
+		/*@keyframes leftright {
+		from { position: absolute; margin-left: -0px; width:100px;}
+		to { position: absolute; margin-left: 900px; width:400px;}
+	}
+
+		@keyframes downright {
+		from {margin-top: 600px;position: absolute; margin-left: -0px; width:100px;}
+		to { margin-top: 300px;position: absolute; margin-left: 900px; width:600px;}
+	}*/
+		@keyframes colo {
+		from { background-color:red;}
+		to {background-color:blue; }
+	}
+		@keyframes colos {
+		from { background-color:yellow;}
+		to {background-color:purple; }
+	}
+	</style>
+</head>
+
+
+
+<body style="background-color: black;">
+
+	
+	<div id="myRect">
+	</div>
+
+	<div id=text1>RAINBOW </br> WORLD</div>
+
+
+	<img src="cat.png" id="cat1" margin : auto;>
+	<div id="cirBut1"></div>
+	<div id="cirBut2"></div>
+	
+	
+	<div id="gifbox" style="width: 0px;">
+		<img id="rsource" src="rainbowman.gif" style="width: 0px; height: 0px; transition: all 2s">
+	</div>
+	<div id="gifbox2" style="width: 0px;">
+		<img id="dsource" src="rainbowdog.gif" style="width: 0px; height: 0px; transition: all 2s">
+	</div>
+
+	<audio id="testMusic">
+		<source src = "catpiano.mp3" type="audio/mpeg">
+	</audio>
+
+
+	<script type="text/javascript">
+   
+			var toggle = "off";
+		cirBut1.onclick = function(){
+			if(toggle == "off"){
+					
+				
+					rsource.style.width = "400px";
+					rsource.style.height = "400px";
+					rsource.style.animationPlayState = "running";
+
+					testMusic.play();
+					toggle = "on";
+				}
+			else {
+					
+				
+					rsource.style.width = "0px";
+					rsource.style.height = "0px";
+					
+					
+					testMusic.pause();
+					toggle = "off";
+				}
+				}
+				var toggle = "off";
+				cirBut2.onclick = function(){
+			if(toggle == "off"){
+					
+				
+					dsource.style.width = "500px";
+					dsource.style.height = "255px";
+
+
+				
+					toggle = "on";
+				}
+			else {
+					
+				
+					dsource.style.width = "0px";
+					dsource.style.height = "0px";
+					
+					
+				
+					toggle = "off";
+				}
+}
+
+	</script>	
+	
+
+
+</body>
+</html>
